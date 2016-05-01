@@ -1,5 +1,6 @@
 <h2>{{model.title}}</h2>
 <p>{{model.body}}</p>
 
+<a href="#" {{action "deletePost" model}}>Delete</a>
 {{link-to "Edit" "posts.edit" model }}
 {{#link-to "posts"}}All posts{{/link-to}}
