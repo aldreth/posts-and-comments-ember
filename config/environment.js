@@ -12,6 +12,7 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    HOST_URL: process.env.HOST_URL,
 
     APP: {
       // Here you can pass flags/options to your application instance
