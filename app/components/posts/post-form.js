@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  showErrors: false,
+
   actions: {
     save() {
       this
@@ -9,7 +11,10 @@ export default Ember.Component.extend({
         .then( () => {
           this.get('router').transitionTo('posts.show', this.model);
         })
-        .catch(() => console.log('help'));
-    }
+        .catch(() => {
+          this.set('showErrors', true);
+        }
+      );
+    },
   }
 });

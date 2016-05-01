@@ -1,15 +1,31 @@
+{{#if showErrors}}
+  <p>
+    Something has gone wrong.
+  </p>
+{{/if}}
+
 <form {{action "save" on="submit"}}>
   <div>
     <label>
       Title
       {{input type="text" value=model.title}}
     </label>
+    {{#each model.errors.title as |error|}}
+      <div class="error">
+        {{error.message}}
+      </div>
+    {{/each}}
   </div>
   <div>
     <label>
       Body
       {{input type="text" value=model.body}}
     </label>
+    {{#each model.errors.body as |error|}}
+      <div class="error">
+        {{error.message}}
+      </div>
+    {{/each}}
   </div>
   <div>
     <input type="submit" value="Save">
